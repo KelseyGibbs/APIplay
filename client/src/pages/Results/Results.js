@@ -75,32 +75,7 @@ class Results extends Component {
       })
 
       console.log(dupes)
-      
-      if (mine2 == null) {
-        this.setState({ hikes: [{"ascent": 1340,
-        "date": "2019-09-20T16:55:51.609Z",
-        "descent": -1342,
-        "high": 911,
-        "id": 7003859,
-        "imgSmall": "https://cdn-files.apstatic.com/hike/7030317_small_1554926735.jpg",
-        "length": "11.2",
-        "location": "Forest Hills, Tennessee",
-        "low": 591,
-        "name": "Red, White, and Blue",
-        "summary": "A nice singletrack course through Percy and Edwin Warner Parks.",
-        "userid": "5d5425bb25562b3d3e2ff1e0"},{"ascent": 1340,
-        "date": "2019-09-20T16:55:51.609Z",
-        "descent": -1342,
-        "high": 911,
-        "id": 7003859,
-        "imgSmall": "https://cdn-files.apstatic.com/hike/7030317_small_1554926735.jpg",
-        "length": "11.2",
-        "location": "Forest Hills, Tennessee",
-        "low": 591,
-        "name": "Red, White, and Blue",
-        "summary": "A nice singletrack course through Percy and Edwin Warner Parks.",
-        "userid": "5d5425bb25562b3d3e2ff1e0"}], set: true})
-      }
+            
       this.setState({ hikes: mine2, set: true})
     }
 

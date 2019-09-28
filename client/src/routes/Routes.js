@@ -45,8 +45,10 @@ const Routes = () => {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/results" component={Results} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/results" component={Results} />
+            </Switch>
           </div>
         </Router>
       </Provider>
