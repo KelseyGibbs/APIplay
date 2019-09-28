@@ -55,7 +55,6 @@ class Results extends Component {
     sortmine = () => {
       let allhikes = this.state.hikes
       let userid = this.props.auth.user.id
-      console.log(allhikes[7].userid)
       console.log(userid)
 
 
@@ -68,16 +67,21 @@ class Results extends Component {
       let mine2 = Array.from(new Set(mine.map(a => a.id)))
       .map(id => {
         return mine.find(a => a.id === id)
-      })
-      console.log(mine2)
+      }(function(){
+        if(mine2 == null) {
+          this.setState({set: false})
+        } else {
+          console.log(mine2)
 
-      let dupes = mine.filter(function(hike) {
-        return hike.id
-      })
-  
-      console.log(dupes)
+          let dupes = mine.filter(function(hike) {
+            return hike.id
+          })
       
-      this.setState({ hikes: mine2, set: true})
+          console.log(dupes)
+          
+          this.setState({ hikes: mine2, set: true})
+        }
+      }))
     }
 
      // Loads all hikes  and sets them to this.state.hikes
@@ -202,7 +206,7 @@ style={{
             </If>
             <Else>
               <div>
-                
+
               </div>
             </Else>
 
