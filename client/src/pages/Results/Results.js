@@ -67,21 +67,41 @@ class Results extends Component {
       let mine2 = Array.from(new Set(mine.map(a => a.id)))
       .map(id => {
         return mine.find(a => a.id === id)
-      }(function(){
-        if(mine2 == null) {
-          this.setState({set: false})
-        } else {
-          console.log(mine2)
+      })
+      console.log(mine2)
 
-          let dupes = mine.filter(function(hike) {
-            return hike.id
-          })
+      let dupes = mine.filter(function(hike) {
+        return hike.id
+      })
+
+      console.log(dupes)
       
-          console.log(dupes)
-          
-          this.setState({ hikes: mine2, set: true})
-        }
-      }))
+      if (mine2 == null) {
+        this.setState({ hikes: [{"ascent": 1340,
+        "date": "2019-09-20T16:55:51.609Z",
+        "descent": -1342,
+        "high": 911,
+        "id": 7003859,
+        "imgSmall": "https://cdn-files.apstatic.com/hike/7030317_small_1554926735.jpg",
+        "length": "11.2",
+        "location": "Forest Hills, Tennessee",
+        "low": 591,
+        "name": "Red, White, and Blue",
+        "summary": "A nice singletrack course through Percy and Edwin Warner Parks.",
+        "userid": "5d5425bb25562b3d3e2ff1e0"},{"ascent": 1340,
+        "date": "2019-09-20T16:55:51.609Z",
+        "descent": -1342,
+        "high": 911,
+        "id": 7003859,
+        "imgSmall": "https://cdn-files.apstatic.com/hike/7030317_small_1554926735.jpg",
+        "length": "11.2",
+        "location": "Forest Hills, Tennessee",
+        "low": 591,
+        "name": "Red, White, and Blue",
+        "summary": "A nice singletrack course through Percy and Edwin Warner Parks.",
+        "userid": "5d5425bb25562b3d3e2ff1e0"}], set: true})
+      }
+      this.setState({ hikes: mine2, set: true})
     }
 
      // Loads all hikes  and sets them to this.state.hikes
