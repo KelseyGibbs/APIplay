@@ -13,6 +13,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import PrivateRoute from "../components/private-route/PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import Results from "../pages/Results/Results"
 
 import "../App.css";
 
@@ -46,6 +47,7 @@ const Routes = () => {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/results" component={Results} />
             </Switch>
           </div>
         </Router>

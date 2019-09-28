@@ -1,42 +1,44 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { If, ElIf, Else } from 'rc-if-else';
 
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <Link
+      <div>
+          <If condition={ window.location.href.indexOf("dashboard") != -1 === true}>
+
+              <ElIf condition={ window.location.href.indexOf("results") != -1 === true}>
+              
+              </ElIf>
+              <Else>
+              <div className="navbar-fixed">
+              <nav className="z-depth-0">
+            <div className="nav-wrapper blue-grey lighten-5">
+              <Link
               to="/"
-              style={{
-                fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;'
-              }}
               className="brand-logo center black-text"
-            >
+              >
              AdventureBound
             </Link>
             <Link
                 to="/register"
-                style={{
-                  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;'
-                }}
-                className="right black-text"
-              >
+                className="right black-text registerlink"
+                >
                 Register
               </Link>
               <Link
                 to="/login"
-                style={{
-                  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;'
-                }}
-                className="left black-text "
-              >
+                className="left black-text loginlink"
+                >
                 Log In
               </Link>
-          </div>
-        </nav>
-      </div>
+              </div>
+              </nav>
+              </div>
+              </Else>
+              </If>
+  </div>
     );
   }
 }
