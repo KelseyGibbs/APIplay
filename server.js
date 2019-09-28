@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path")
 const users = require("./routes/api/users");
-
+const hikes = require("./routes/api/hikes");
 const app = express();
 
 // Bodyparser middleware
@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 // DB Config
 require('./DB/dbConnection');
 
-
 // Passport middleware
 app.use(passport.initialize());
 
@@ -26,6 +25,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/hikes", hikes);
 
 if(process.env.NODE_ENV === "production") {
   // Set Static Folder for heroku
