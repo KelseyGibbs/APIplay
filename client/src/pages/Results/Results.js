@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import userHikes from "../../utils/userHikes";
 import { List, ListItem } from "../../components/List";
-import { If, Elif, Else } from 'rc-if-else';
+import { If, ElIf, Else } from 'rc-if-else';
 
 
 class Results extends Component {
@@ -200,6 +200,11 @@ style={{
             </div>
             )}  
             </If>
+            <Else>
+              <div>
+                
+              </div>
+            </Else>
 
 </div>
 <div className="col s1"></div>
